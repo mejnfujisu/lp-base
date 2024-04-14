@@ -1,5 +1,5 @@
 import React from 'react';
-import Ui from './UI'
+import Ui from './ui'
 
 function App() {
   return (

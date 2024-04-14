@@ -1,11 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './self.module.css';
 
-const Tour = function () {
+interface Props {
+  active?: boolean;
+}
+
+const Tour: React.FC<Props> = (props) => {
+
+  const { active } = props;
   return (
-    <div className={`g-section ${styles['s-section']}`}>
-<div></div>
-    </div>
+    <>
+      {!active ?
+        (
+          <div className={`${styles['s-section']}`}>
+            <div className={styles['content']}></div>
+          </div>
+        ) :
+        (
+          <div className={`${styles['s-section']}`}>
+            <div className={styles['content']}></div>
+          </div>
+        )
+      }
+    </>
   );
 }
 

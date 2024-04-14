@@ -1,0 +1,45 @@
+.background {
+  overflow: auto; 
+}
+
+.background::-webkit-scrollbar {
+  width: 20px;
+}
+
+.background::-webkit-scrollbar-track {
+  border: 1.5px solid rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  margin-bottom: 150px;
+  margin-top: 150px;
+}
+
+.background::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #ffffff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 35px;
+}
+
+.background-small {
+  overflow: auto; 
+}
+
+.background-small::-webkit-scrollbar {
+  width: 20px;
+}
+
+.background-small::-webkit-scrollbar-track {
+  border: 1.5px solid rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.background-small::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #ffffff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 35px;
+}

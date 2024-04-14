@@ -1,0 +1,5 @@
+export const SET_TOUR_DETAIL = 'SET_TOUR_DETAIL';
+export const SET_TOUR_LIST = 'SET_TOUR_LIST';
+
+export const SET_CHAT_GROUP_LIST = 'SET_CHAT_GROUP_LIST';
+export const SET_CHAT_FRIEND_LIST = 'SET_CHAT_FRIEND_LIST';

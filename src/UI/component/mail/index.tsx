@@ -1,11 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './self.module.css';
 
-const Mail = function () {
+interface Props {
+  active?: boolean;
+}
+
+const Mail: React.FC<Props> = (props) => {
+
+  const { active } = props;
   return (
-    <div className={`g-section ${styles['s-section']}`}>
-<div></div>
-    </div>
+    <>
+      {!active ?
+        (
+          <div className={`g-section ${styles['s-section']}`}>
+            <div className={styles['content']}></div>
+          </div>
+        ) :
+        (
+          <div className={`g-section}`}>
+            <div className={styles['content']}></div>
+          </div>
+        )
+      }
+    </>
   );
 }
 

@@ -1,0 +1,38 @@
+/* container "mixin" */
+/* .filterModal .ant-modal-content {
+  border-radius: 20px;
+  background: red;
+}
+
+h3{
+  color: blue;
+}
+
+.filterModal .ant-modal-header {
+  border-radius: 20px 20px 0 0;
+} */
+
+div[class*='filterModal'] div[class='ant-modal-content'] {
+  border-radius: 12px;
+}
+
+.go-from-custom-field .ant-input {
+  border-style: dashed
+}
+
+.month-picker {
+  background: #FFFFFF;
+  border-radius: 12px;
+  height: 30px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.month-picker:hover {
+  border: 0.5px solid rgba(139, 195, 74, 1);
+}
+
+.selected-month{
+  background: rgba(139, 195, 74, 1);
+  color: #FFFFFF;
+}

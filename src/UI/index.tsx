@@ -1,36 +1,40 @@
 import React, { useState } from 'react';
 import './index.css'
-import Tour from './component/tour'
+// import Tour from './component/tour'
 import Schedule from './component/schedule'
 import Setting from './component/setting'
 import Social from './component/social'
 import Mail from './component/mail'
 import Bell from './component/bell'
 import Profile from './component/profile';
+import Tour from './component/tour'
+
+const _topHeight = 10;
+const _bottomHeight = 8;
+const _default50 = 50;
+const _default100 = 100;
+const _tourwidth = 58;
+const _mailHeight = 10.6;
+const _profilewidth = 14.5;
+const _profileHeight = 100 - _default50 - _mailHeight - _mailHeight;
+const _scheduleWidth = 100 - _tourwidth - _profilewidth;
+const _scheduleHeight = _default50;
+const _settingWidth = _profilewidth / 2;
+const _socialWidth = 100 - _tourwidth - (_profilewidth / 2);
+const _tourHeight = 100 - _topHeight - _bottomHeight;
+const _settingHeight = _default50 - _topHeight - _bottomHeight;
+const _socialHeight = _default50 - _topHeight - _bottomHeight;
 
 const Ui = function () {
-  const _default25 = 25;
-  const _default50 = 50;
-  const _default100 = 100;
 
-  const _tourwidth = 58;
-  const _tourHeight = 100;
+  const [onExpand, setOnExpand] = useState('');
+  const [activeExpand, setActiveExpand] = useState(false);
 
-  const _mailHeight = 10.6;
+  const [topWidth, setTopWidth] = useState(`${_default100}vw`);
+  const [topHeight, setTopHeight] = useState(`${_topHeight}vh`);
 
-  const _profilewidth = 14.5;
-  const _profileHeight = 100 - _default50 - _mailHeight - _mailHeight;
-
-  const _scheduleWidth = 100 - _tourwidth - _profilewidth;
-  const _scheduleHeight = _default50;
-
-  const _settingWidth = _profilewidth / 2;
-  const _settingHeight = _default50;
-
-  const _socialWidth = 100 - _tourwidth - (_profilewidth / 2);
-  const _socialHeight = _default50;
-
-  const [paddingExpanded, setPaddingExpanded] = useState('');
+  const [bottomWidth, setBottomWidth] = useState(`${_default100}vw`);
+  const [bottomHeight, setBottomHeight] = useState(`${_bottomHeight}vh`);
 
   const [tourWidth, setTourWidth] = useState(`${_tourwidth}vw`);
   const [tourHeight, setTourHeight] = useState(`${_tourHeight}vh`);
@@ -40,23 +44,24 @@ const Ui = function () {
 
   const [scheduleWidth, setScheduleWidth] = useState(`${_scheduleWidth}vw`);
   const [scheduleHeight, setScheduleHeight] = useState(`${_scheduleHeight}vh`);
-  
+
   const [settingWidth, setSettingWidth] = useState(`${_settingWidth}vw`);
   const [settingHeight, setSettingHeight] = useState(`${_settingHeight}vh`);
-  
+
   const [mailWidth, setMailWidth] = useState(`${_settingWidth}vw`);
   const [mailHeight, setMailHeight] = useState(`${_mailHeight}vh`);
 
   const [bellWidth, setBellWidth] = useState(`${_settingWidth}vw`);
   const [bellHeight, setBellHeight] = useState(`${_mailHeight}vh`);
-  
+
   const [socialWidth, setSocialWidth] = useState(`${_socialWidth}vw`);
   const [socialHeight, setSocialHeight] = useState(`${_socialHeight}vh`);
 
 
   // initial
   const initStatus = () => {
-    setPaddingExpanded('');
+    setOnExpand('');
+    setActiveExpand(false)
     setTourWidth(`${_tourwidth}vw`);
     setTourHeight(`${_tourHeight}vh`);
 
@@ -77,20 +82,31 @@ const Ui = function () {
 
     setMailHeight(`${_mailHeight}vh`);
     setMailWidth(`${_settingWidth}vw`);
+    setTopHeight(`${_topHeight}vh`);
+    setBottomHeight(`${_bottomHeight}vh`);
   };
 
 
   // Functional
   const handleTourlick = () => {
     if (tourWidth === `${_tourwidth}vw`) {
-      setPaddingExpanded('0px');
+      setOnExpand('tour');
+      setActiveExpand(true);
       setTourWidth('100vw');
+      setTourHeight(`100vh`);
       setProfileWidth('0vw');
       setScheduleWidth('0vw');
+      setScheduleHeight('70vh');
+      setSocialHeight('30vh');
+      setBellHeight('15vh');
+      setMailHeight('15vh');
+      setProfileHeight('40vh');
       setSocialWidth('0vw');
       setSettingWidth('0vw');
       setMailWidth('0vw');
       setBellWidth('0vw');
+      setTopHeight('0vh');
+      setBottomHeight('0vh');
     } else {
       initStatus();
     }
@@ -98,7 +114,8 @@ const Ui = function () {
 
   const handleProfileClick = () => {
     if (profileWidth === `${_profilewidth}vw`) {
-      setPaddingExpanded('0px');
+      setOnExpand('profile');
+      setActiveExpand(true);
       setProfileHeight('100vh');
       setProfileWidth('100vw');
       setTourWidth('0vw');
@@ -112,6 +129,9 @@ const Ui = function () {
       setMailWidth('50vw');
       setBellHeight('0vh');
       setMailHeight('0vh');
+      setTopHeight('0vh');
+      setBottomHeight('0vh');
+      setTourHeight('100vh');
     } else {
       initStatus();
     }
@@ -119,85 +139,91 @@ const Ui = function () {
 
   const handleSocialClick = () => {
     if (socialWidth === `${_socialWidth}vw`) {
-      setPaddingExpanded('0px');
+      setOnExpand('social');
+      setActiveExpand(true);
       setSocialHeight('100vh');
       setSocialWidth('100vw');
       setTourWidth('0vw');
       setScheduleHeight('0vh');
-      setScheduleWidth('50vw');
+      setScheduleWidth('100vw');
       setProfileHeight('0vh');
-      setProfileWidth('50vw');
+      setProfileWidth('0vw');
       setSettingWidth('0vw');
       setSettingHeight('100vh');
-      setBellWidth('25vw');
-      setMailWidth('25vw');
+      setBellWidth('0vw');
+      setMailWidth('0vw');
       setBellHeight('0vh');
       setMailHeight('0vh');
+      setTopHeight('0vh');
+      setBottomHeight('0vh');
+      setTourHeight('100vh');
     } else {
       initStatus();
     }
   };
 
   return (
-    // <div className='full-height'>I am a DIV that will stretch to fit the whole width and height of the browser window!</div>
-    <div className="container">
-      <div
-        id="tour"
-        className="box"
-        style={{ width: tourWidth, height: tourHeight, padding: paddingExpanded }}
-        onClick={handleTourlick}
-      > <Tour/></div>
-      <div>
-        <div className='block-2' style={{ display: 'flex' }}>
-          <div>
-            <div
-              id="top-profile"
-              className="box"
-              style={{ width: mailWidth, height: mailHeight, padding: paddingExpanded }}
-            // onClick={handleProfileClick}
-            ></div>
-            <div
-              id="profile"
-              className="box"
-              style={{ width: profileWidth, height: profileHeight, padding: paddingExpanded }}
-              onClick={handleProfileClick}
-            ><Profile/></div>
-            <div style={{ display: 'flex' }}>
-              <div
-                id="mail"
-                className="box"
-                style={{ width: mailWidth, height: mailHeight, padding: paddingExpanded }}
-              // onClick={handleProfileClick}
-              ><Mail/></div>
-              <div
-                id="bell"
-                className="box"
-                style={{ width: bellWidth, height: bellHeight, padding: paddingExpanded }}
-              // onClick={handleProfileClick}
-              ><Bell/></div>
-            </div>
-          </div>
-          <div
-            id="schedule"
-            className="box"
-            style={{ width: scheduleWidth, height: scheduleHeight, padding: paddingExpanded }}
-          // onClick={handleDiv2Click}
-          ><Schedule/></div>
-        </div>
-        <div className='block-2' style={{ display: 'flex' }}>
-          <div
-            id="setting"
-            className="box"
-            style={{ width: settingWidth, height: settingHeight, padding: paddingExpanded }}
-          // onClick={handleProfileClick}
-          ><Setting/></div>
-          <div
-            id="social"
-            className="box"
-            style={{ width: socialWidth, height: socialHeight, padding: paddingExpanded }}
-            onClick={handleSocialClick}
-          ><Social/></div>
-        </div>
+    <div className='container' >
+      <div className='box' id='top' style={{ fontSize: 20, textAlign: 'center', height: topHeight, width: topWidth }}>
+        {onExpand === '' ?
+          (<>TOP</>) :
+          (<></>)
+        }
+      </div>
+      <div className='box' id='tour' onClick={handleTourlick} style={{ fontSize: 20, textAlign: 'center', height: tourHeight, width: tourWidth }}>
+          {onExpand === 'tour' ?
+            (<Tour active />) :
+            activeExpand ?
+              (<></>) :
+              (<Tour />)
+          }
+      </div>
+      <div className='box' id='section2' style={{ fontSize: 20, textAlign: 'center', height: mailHeight, width: mailWidth }}></div>
+      <div className='box' id='schedule' style={{ fontSize: 20, textAlign: 'center', height: scheduleHeight, width: scheduleWidth }}>
+        {onExpand === '' ?
+          (<Schedule />) :
+          (<></>)
+        }
+      </div>
+      <div className='box' id='profile' onClick={handleProfileClick} style={{ fontSize: 20, textAlign: 'center', height: profileHeight, width: profileWidth }}>
+        {onExpand === 'profile' ?
+          (<Profile active />) :
+          activeExpand ?
+            (<></>) :
+            (<Profile />)
+        }
+      </div>
+      <div className='box' id='mail' style={{ fontSize: 20, textAlign: 'center', height: mailHeight, width: mailWidth }}>
+        {onExpand === '' ?
+          (<Mail />) :
+          (<></>)
+        }
+      </div>
+      <div className='box' id='bell' style={{ fontSize: 20, textAlign: 'center', height: bellHeight, width: bellWidth }}>
+        {onExpand === '' ?
+          (<Bell />) :
+          (<></>)
+        }
+      </div>
+      <div className='box' id='setting' style={{ fontSize: 20, textAlign: 'center', height: settingHeight, width: settingWidth }}>
+        {onExpand === '' ?
+          (<Setting />) :
+          (<></>)
+        }
+      </div>
+      <div className='box' id='social' onClick={handleSocialClick} style={{ fontSize: 20, textAlign: 'center', height: socialHeight, width: socialWidth }}>
+        {onExpand === 'social' ?
+          (<Social active />) :
+          activeExpand ?
+            (<></>) :
+            (<Social />)
+        }
+      </div>
+      <div className='box' id='bottom' style={{ fontSize: 20, textAlign: 'center', height: bottomHeight, width: bottomWidth }}>
+        {onExpand === '' ?
+          (<>bottom</>) :
+          (<></>)
+        }
       </div>
     </div>
   );
