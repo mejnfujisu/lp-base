@@ -16,6 +16,9 @@ import filterMonthSvg from './filterMonthSvg';
 import filterDaysSvg from './filterDaysSvg';
 import filterSlotsSvg from './filterSlotsSvg';
 import filterCustomSvg from './filterCustomSvg';
+import homeMailSvg from './homeMailSvg';
+import homeBell from './homeBell';
+import homeSetting from './homeSetting';
 
 // MENU-BAR
 export const HomeIcon = (props: CustomIconComponentProps) => (
@@ -84,4 +87,16 @@ export const FilterSlots = (props: CustomIconComponentProps) => (
 
 export const FilterCustom = (props: CustomIconComponentProps) => (
   <Icon component={filterCustomSvg} {...props} />
+);
+
+export const HomeMail = (props: CustomIconComponentProps) => (
+  <Icon component={homeMailSvg} {...props} />
+);
+
+export const HomeBell = (props: CustomIconComponentProps) => (
+  <Icon component={homeBell} {...props} />
+);
+
+export const HomeSetting = (props: CustomIconComponentProps) => (
+  <Icon component={homeSetting} {...props} />
 );

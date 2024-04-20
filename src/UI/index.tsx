@@ -10,7 +10,7 @@ import Profile from './component/profile';
 import Tour from './component/tour'
 
 const _topHeight = 10;
-const _bottomHeight = 8;
+const _bottomHeight = 2;
 const _default50 = 50;
 const _default100 = 100;
 const _tourwidth = 58;
@@ -22,8 +22,9 @@ const _scheduleHeight = _default50;
 const _settingWidth = _profilewidth / 2;
 const _socialWidth = 100 - _tourwidth - (_profilewidth / 2);
 const _tourHeight = 100 - _topHeight - _bottomHeight;
-const _settingHeight = 100 - _topHeight - _bottomHeight - _mailHeight*2 - _profileHeight;
-const _socialHeight = _settingHeight;
+const _settingHeight = _mailHeight;
+const _settingFullHeight = 100 - _topHeight - _bottomHeight - _mailHeight*2 - _profileHeight;
+const _socialHeight = _settingFullHeight;
 
 let _clickAble = true;
 
@@ -173,46 +174,56 @@ const Ui = function () {
     }
   };
 
+  const handleSettingClick = () => {
+    if(!clickAble()) return;
+    if (settingHeight === `${_settingHeight}vh`) {
+      setOnExpand('setting');
+      setSettingHeight(`${_settingFullHeight}vh`)
+    } else {
+      initStatus();
+    }
+  };
+
   return (
     <div className='container' >
       <div className='box' id='top' style={{ fontSize: 20, textAlign: 'center', height: topHeight, width: topWidth }}>
         {onExpand === '' ?
-          (<>TOP</>) :
+          (<></>) :
           (<></>)
         }
       </div>
       <div className='box' id='tour' onClick={handleTourlick} style={{ fontSize: 20, textAlign: 'center', height: tourHeight, width: tourWidth }}>
           {onExpand === 'tour' ?
             (<Tour active />) :
-            (<Tour hidding={onExpand !== ''} />)
+            (<Tour hidding={onExpand !== 'setting' && onExpand !== ''} />)
           }
       </div>
       <div className='box' id='section2' style={{ fontSize: 20, textAlign: 'center', height: mailHeight, width: mailWidth }}></div>
       <div className='box' id='schedule' style={{ fontSize: 20, textAlign: 'center', height: scheduleHeight, width: scheduleWidth }}>
         {onExpand === 'schedule' ?
           (<Schedule active />) :
-          (<Schedule hidding={onExpand !== ''} />)
+          (<Schedule hidding={onExpand !== 'setting' && onExpand !== ''} />)
         }
       </div>
       <div className='box' id='profile' onClick={handleProfileClick} style={{ fontSize: 20, textAlign: 'center', height: profileHeight, width: profileWidth }}>
         {onExpand === 'profile' ?
           (<Profile active />) :
-          (<Profile hidding={onExpand !== ''} />)
+          (<Profile hidding={onExpand !== 'setting' && onExpand !== ''} />)
         }
       </div>
       <div className='box' id='mail' style={{ fontSize: 20, textAlign: 'center', height: mailHeight, width: mailWidth }}>
         {onExpand === 'mail' ?
           (<Mail active />) :
-          (<Mail hidding={onExpand !== ''} />)
+          (<Mail hidding={onExpand !== 'setting' && onExpand !== ''} />)
         }
       </div>
       <div className='box' id='bell' style={{ fontSize: 20, textAlign: 'center', height: bellHeight, width: bellWidth }}>
         {onExpand === 'bell' ?
           (<Bell active />) :
-          (<Bell hidding={onExpand !== ''} />)
+          (<Bell hidding={onExpand !== 'setting' && onExpand !== ''} />)
         }
       </div>
-      <div className='box' id='setting' style={{ fontSize: 20, textAlign: 'center', height: settingHeight, width: settingWidth }}>
+      <div className='box' id='setting' onClick={handleSettingClick} style={{ fontSize: 20, textAlign: 'center', height: settingHeight, width: settingWidth }}>
         {onExpand === 'setting' ?
           (<Setting active />) :
           (<Setting hidding={onExpand !== ''} />)
@@ -221,12 +232,12 @@ const Ui = function () {
       <div className='box' id='social' onClick={handleSocialClick} style={{ fontSize: 20, textAlign: 'center', height: socialHeight, width: socialWidth }}>
         {onExpand === 'social' ?
           (<Social active />) :
-          (<Social hidding={onExpand !== ''} />)
+          (<Social hidding={onExpand !== 'setting' && onExpand !== ''} />)
         }
       </div>
       <div className='box' id='bottom' style={{ fontSize: 20, textAlign: 'center', height: bottomHeight, width: bottomWidth }}>
         {onExpand === '' ?
-          (<>bottom</>) :
+          (<></>) :
           (<></>)
         }
       </div>
