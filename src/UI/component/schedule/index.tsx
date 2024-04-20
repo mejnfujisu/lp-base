@@ -10,7 +10,6 @@ interface Props {
 const Component: React.FC<Props> = (props) => {
   const { active, hidding } = props;
   const [isDisplay, setIsDisplay] = useState('');
-  const [visisbleAnimation, setVisisbleAnimation] = useState<any>({ opacity: 0.2 });
   const demoList = [1, 2, 3];
 
   useEffect(() => {
@@ -20,14 +19,6 @@ const Component: React.FC<Props> = (props) => {
       }, 2000);
     } else setIsDisplay('')
 
-    if (active) {
-      setTimeout(() => {
-        setVisisbleAnimation({
-          transition: 'opacity 2s',
-          opacity: 1,
-        });
-      }, 100);
-    } else setVisisbleAnimation({ opacity: 0.2 });
   }, [hidding, active]);
 
 

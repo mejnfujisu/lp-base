@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './self.module.css';
 import { Col, Row } from 'antd';
-import img09 from './img/09.jpg';
 import { HomeSetting } from '../../../element/icons';
 
 interface Props {
@@ -29,7 +28,7 @@ const Component: React.FC<Props> = (props) => {
             });
          }, 100);
       } else setVisisbleAnimation({ opacity: 0 });
-   }, [hidding]);
+   }, [hidding, active]);
 
    return (
       <>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './self.module.css';
-import { Avatar, Badge, Col, Row } from 'antd';
-import img09 from './img/09.jpg';
+import { Badge, Col, Row } from 'antd';
 import { HomeBell } from '../../../element/icons';
 
 interface Props {
@@ -12,7 +11,7 @@ interface Props {
 const Component: React.FC<Props> = (props) => {
    const { active, hidding } = props;
    const [isDisplay, setIsDisplay] = useState('');
-   const [visisbleAnimation, setVisisbleAnimation] = useState<any>({ opacity: 0.2 });
+   // const [visisbleAnimation, setVisisbleAnimation] = useState<any>({ opacity: 0.2 });
 
    useEffect(() => {
       if (hidding) {
@@ -21,15 +20,15 @@ const Component: React.FC<Props> = (props) => {
          }, 2000);
       } else setIsDisplay('')
 
-      if (active) {
-         setTimeout(() => {
-            setVisisbleAnimation({
-               transition: 'opacity 2s',
-               opacity: 1,
-            });
-         }, 100);
-      } else setVisisbleAnimation({ opacity: 0.2 });
-   }, [hidding]);
+      // if (active) {
+      //    setTimeout(() => {
+      //       setVisisbleAnimation({
+      //          transition: 'opacity 2s',
+      //          opacity: 1,
+      //       });
+      //    }, 100);
+      // } else setVisisbleAnimation({ opacity: 0.2 });
+   }, [hidding, active]);
 
 
 

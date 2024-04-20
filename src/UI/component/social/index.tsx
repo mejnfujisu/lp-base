@@ -13,7 +13,7 @@ const Component: React.FC<Props> = (props) => {
    const { active, hidding } = props;
    const [isDisplay, setIsDisplay] = useState('');
    const [visisbleAnimation, setVisisbleAnimation] = useState<any>({ opacity: 0.2 });
-   const [demoList, setDemoList] = useState<any>([1, 2, 3, 4]);
+   const demoList = [1, 2, 3, 4];
 
    useEffect(() => {
       if (hidding) {
@@ -30,7 +30,7 @@ const Component: React.FC<Props> = (props) => {
             });
          }, 100);
       } else setVisisbleAnimation({ opacity: 0.2 });
-   }, [hidding]);
+   }, [hidding, active]);
 
 
    return (

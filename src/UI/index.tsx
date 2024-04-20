@@ -31,12 +31,11 @@ let _clickAble = true;
 const Ui = function () {
 
   const [onExpand, setOnExpand] = useState('');
-  const [activeExpand, setActiveExpand] = useState(false);
 
-  const [topWidth, setTopWidth] = useState(`${_default100}vw`);
+  const topWidth = `${_default100}vw`;
   const [topHeight, setTopHeight] = useState(`${_topHeight}vh`);
 
-  const [bottomWidth, setBottomWidth] = useState(`${_default100}vw`);
+  const bottomWidth = `${_default100}vw`;
   const [bottomHeight, setBottomHeight] = useState(`${_bottomHeight}vh`);
 
   const [tourWidth, setTourWidth] = useState(`${_tourwidth}vw`);

@@ -28,7 +28,7 @@ const Component: React.FC<Props> = (props) => {
             });
          }, 100);
       } else setVisisbleAnimation({ opacity: 0.2 });
-   }, [hidding]);
+   }, [hidding, active]);
 
 
 
