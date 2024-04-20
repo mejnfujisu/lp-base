@@ -22,8 +22,10 @@ const _scheduleHeight = _default50;
 const _settingWidth = _profilewidth / 2;
 const _socialWidth = 100 - _tourwidth - (_profilewidth / 2);
 const _tourHeight = 100 - _topHeight - _bottomHeight;
-const _settingHeight = _default50 - _topHeight - _bottomHeight;
-const _socialHeight = _default50 - _topHeight - _bottomHeight;
+const _settingHeight = 100 - _topHeight - _bottomHeight - _mailHeight*2 - _profileHeight;
+const _socialHeight = _settingHeight;
+
+let _clickAble = true;
 
 const Ui = function () {
 
@@ -61,7 +63,6 @@ const Ui = function () {
   // initial
   const initStatus = () => {
     setOnExpand('');
-    setActiveExpand(false)
     setTourWidth(`${_tourwidth}vw`);
     setTourHeight(`${_tourHeight}vh`);
 
@@ -88,10 +89,19 @@ const Ui = function () {
 
 
   // Functional
+
+  function clickAble() {
+    if(!_clickAble) return false;
+    _clickAble = false;
+    setTimeout(() => {
+      _clickAble = true;
+    }, 2000);
+    return true;
+  }
   const handleTourlick = () => {
+    if(!clickAble()) return;
     if (tourWidth === `${_tourwidth}vw`) {
       setOnExpand('tour');
-      setActiveExpand(true);
       setTourWidth('100vw');
       setTourHeight(`100vh`);
       setProfileWidth('0vw');
@@ -103,6 +113,7 @@ const Ui = function () {
       setProfileHeight('40vh');
       setSocialWidth('0vw');
       setSettingWidth('0vw');
+      setSettingHeight('30vh');
       setMailWidth('0vw');
       setBellWidth('0vw');
       setTopHeight('0vh');
@@ -113,9 +124,9 @@ const Ui = function () {
   };
 
   const handleProfileClick = () => {
+    if(!clickAble()) return;
     if (profileWidth === `${_profilewidth}vw`) {
       setOnExpand('profile');
-      setActiveExpand(true);
       setProfileHeight('100vh');
       setProfileWidth('100vw');
       setTourWidth('0vw');
@@ -138,9 +149,9 @@ const Ui = function () {
   };
 
   const handleSocialClick = () => {
+    if(!clickAble()) return;
     if (socialWidth === `${_socialWidth}vw`) {
       setOnExpand('social');
-      setActiveExpand(true);
       setSocialHeight('100vh');
       setSocialWidth('100vw');
       setTourWidth('0vw');
@@ -173,50 +184,44 @@ const Ui = function () {
       <div className='box' id='tour' onClick={handleTourlick} style={{ fontSize: 20, textAlign: 'center', height: tourHeight, width: tourWidth }}>
           {onExpand === 'tour' ?
             (<Tour active />) :
-            activeExpand ?
-              (<></>) :
-              (<Tour />)
+            (<Tour hidding={onExpand !== ''} />)
           }
       </div>
       <div className='box' id='section2' style={{ fontSize: 20, textAlign: 'center', height: mailHeight, width: mailWidth }}></div>
       <div className='box' id='schedule' style={{ fontSize: 20, textAlign: 'center', height: scheduleHeight, width: scheduleWidth }}>
-        {onExpand === '' ?
-          (<Schedule />) :
-          (<></>)
+        {onExpand === 'schedule' ?
+          (<Schedule active />) :
+          (<Schedule hidding={onExpand !== ''} />)
         }
       </div>
       <div className='box' id='profile' onClick={handleProfileClick} style={{ fontSize: 20, textAlign: 'center', height: profileHeight, width: profileWidth }}>
         {onExpand === 'profile' ?
           (<Profile active />) :
-          activeExpand ?
-            (<></>) :
-            (<Profile />)
+          (<Profile hidding={onExpand !== ''} />)
         }
       </div>
       <div className='box' id='mail' style={{ fontSize: 20, textAlign: 'center', height: mailHeight, width: mailWidth }}>
-        {onExpand === '' ?
-          (<Mail />) :
-          (<></>)
+        {onExpand === 'mail' ?
+          (<Mail active />) :
+          (<Mail hidding={onExpand !== ''} />)
         }
       </div>
       <div className='box' id='bell' style={{ fontSize: 20, textAlign: 'center', height: bellHeight, width: bellWidth }}>
-        {onExpand === '' ?
-          (<Bell />) :
-          (<></>)
+        {onExpand === 'bell' ?
+          (<Bell active />) :
+          (<Bell hidding={onExpand !== ''} />)
         }
       </div>
       <div className='box' id='setting' style={{ fontSize: 20, textAlign: 'center', height: settingHeight, width: settingWidth }}>
-        {onExpand === '' ?
-          (<Setting />) :
-          (<></>)
+        {onExpand === 'setting' ?
+          (<Setting active />) :
+          (<Setting hidding={onExpand !== ''} />)
         }
       </div>
       <div className='box' id='social' onClick={handleSocialClick} style={{ fontSize: 20, textAlign: 'center', height: socialHeight, width: socialWidth }}>
         {onExpand === 'social' ?
           (<Social active />) :
-          activeExpand ?
-            (<></>) :
-            (<Social />)
+          (<Social hidding={onExpand !== ''} />)
         }
       </div>
       <div className='box' id='bottom' style={{ fontSize: 20, textAlign: 'center', height: bottomHeight, width: bottomWidth }}>

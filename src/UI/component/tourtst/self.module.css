@@ -1,7 +1,7 @@
-.section {
+.s-section {
   box-sizing: border-box;
-  height: 100%;
   padding: 10px;
+  height: 100%;
 }
 
 .s-hidding {
@@ -9,13 +9,8 @@
   opacity: 0.2;
 }
 
-.h-content {
+.content {
   background: white;
-  height: 100%;
-  /* background-color: rgba(255, 255, 255, 0.3); */
-}
-
-.s-content {
   height: 100%;
   /* background-color: rgba(255, 255, 255, 0.3); */
 }
