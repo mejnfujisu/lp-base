@@ -6,7 +6,7 @@
 
 .s-hidding {
   transition: opacity 1s;
-  opacity: 0.2;
+  opacity: 0;
 }
 
 .h-content {

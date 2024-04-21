@@ -19,6 +19,7 @@ import filterCustomSvg from './filterCustomSvg';
 import homeMailSvg from './homeMailSvg';
 import homeBell from './homeBell';
 import homeSetting from './homeSetting';
+import loadMore from './moreSvg';
 
 // MENU-BAR
 export const HomeIcon = (props: CustomIconComponentProps) => (
@@ -99,4 +100,8 @@ export const HomeBell = (props: CustomIconComponentProps) => (
 
 export const HomeSetting = (props: CustomIconComponentProps) => (
   <Icon component={homeSetting} {...props} />
+);
+
+export const LoadMore = (props: CustomIconComponentProps) => (
+  <Icon component={loadMore} {...props} />
 );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './self.module.css';
-import { Badge, Col, Row } from 'antd';
+import { Badge } from 'antd';
 import { HomeMail } from '../../../element/icons';
 
 interface Props {
@@ -36,13 +36,11 @@ const Component: React.FC<Props> = (props) => {
       <>
          <div className={`${styles['section']} ${hidding ? styles['s-hidding'] : ''}`} style={{ display: isDisplay }}>
             <div className={styles['h-content']}>
-               <Row style={{ padding: 20 }}>
-                  <Col span={24}>
-                     <Badge count={12} color="#faad14">
-                        <HomeMail width={''} height={''} fill={''} />
-                     </Badge>
-                  </Col>
-               </Row>
+               <div style={{ padding: '15%' }}>
+                  <Badge size="small" count={12} color="#faad14" style={{marginRight: '5%', marginTop: '5%'}}>
+                  <HomeMail width={''} height={''} fill={''} />
+                  </Badge>
+               </div>
             </div>
          </div>
       </>

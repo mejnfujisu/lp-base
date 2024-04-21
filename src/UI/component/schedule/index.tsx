@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './self.module.css';
 import { Button, Col, Row } from 'antd';
+import { LoadMore } from '../../../element/icons';
 
 interface Props {
   active?: boolean;
@@ -109,6 +110,11 @@ const Component: React.FC<Props> = (props) => {
                     )
                   })}
                 </Col>
+              </Row>
+              <Row>
+                <div style={{width: '100%', marginInline: 'auto'}}>
+                    <LoadMore fill='' height='' width=''/>
+                </div>
               </Row>
             </Col>
           </Row>

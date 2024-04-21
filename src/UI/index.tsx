@@ -119,7 +119,7 @@ const Ui = function () {
       setTopHeight('0vh');
       setBottomHeight('0vh');
     } else {
-      initStatus();
+      // initStatus();
     }
   };
 
@@ -144,7 +144,7 @@ const Ui = function () {
       setBottomHeight('0vh');
       setTourHeight('100vh');
     } else {
-      initStatus();
+      // initStatus();
     }
   };
 
@@ -169,7 +169,7 @@ const Ui = function () {
       setBottomHeight('0vh');
       setTourHeight('100vh');
     } else {
-      initStatus();
+      // initStatus();
     }
   };
 

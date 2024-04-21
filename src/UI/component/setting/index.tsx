@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styles from './self.module.css';
-import { Col, Row } from 'antd';
 import { HomeSetting } from '../../../element/icons';
 
 interface Props {
@@ -23,6 +22,7 @@ const Component: React.FC<Props> = (props) => {
       if (active) {
          setTimeout(() => {
             setVisisbleAnimation({
+               padding: '15%',
                transition: 'opacity 2s',
                opacity: 1,
             });
@@ -36,37 +36,27 @@ const Component: React.FC<Props> = (props) => {
             (
                <div className={`${styles['section']} ${hidding ? styles['s-hidding'] : ''}`} style={{ display: isDisplay }}>
                   <div className={styles['h-content']}>
-                        <Row style={{ padding: 10 }}>
-                           <Col span={24}>
-                              <HomeSetting width={''} height={''} fill={''} />
-                           </Col>
-                        </Row>
+                     <div style={{ padding: '15%' }}>
+                        <HomeSetting width={''} height={''} fill={''} />
+                     </div>
                   </div>
                </div>
             ) :
             (
                <div className={`${styles['section']} ${styles['s-filled']}`}>
                   <div className={styles['s-content']}>
-                        <Row style={{ padding: 10 }}>
-                           <Col span={24}>
-                              <HomeSetting width={''} height={''} fill={''} />
-                           </Col>
-                        </Row>
-                        <Row style={{ padding: 10 }}>
-                           <Col span={24} style={visisbleAnimation}>
-                              <HomeSetting width={''} height={''} fill={''} />
-                           </Col>
-                        </Row>
-                        <Row style={{ padding: 10 }}>
-                           <Col span={24} style={visisbleAnimation}>
-                              <HomeSetting width={''} height={''} fill={''} />
-                           </Col>
-                        </Row>
-                        <Row style={{ padding: 10 }}>
-                           <Col span={24} style={visisbleAnimation}>
-                              <HomeSetting width={''} height={''} fill={''} />
-                           </Col>
-                        </Row>
+                     <div style={{ padding: '15%' }}>
+                        <HomeSetting width={''} height={''} fill={''} />
+                     </div>
+                     <div style={visisbleAnimation}>
+                        <HomeSetting width={''} height={''} fill={''} />
+                     </div>
+                     <div style={visisbleAnimation}>
+                        <HomeSetting width={''} height={''} fill={''} />
+                     </div>
+                     <div style={visisbleAnimation}>
+                        <HomeSetting width={''} height={''} fill={''} />
+                     </div>
                   </div>
                </div>
             )

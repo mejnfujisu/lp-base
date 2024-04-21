@@ -1,0 +1,24 @@
+
+ul[class*='ant-menu-light'] {
+  background: rgba(255, 255, 255, 0)
+}
+
+div[class*='ant-menu-submenu-title'] {
+  padding: 0px !important;
+  margin: 0 !important;
+}
+
+div[class*='ant-menu-submenu-title']:hover {
+  background: none !important;
+  border-radius: 30px;
+}
+
+/* div[class*='ant-menu-submenu-inline'] {
+  background: #FFFFFF;
+  margin: '10px 0px';
+} */
+
+/* .ant-menu-submenu .ant-menu-submenu-inline{
+  background: #FFFFFF;
+  margin: '10px 0px';
+} */

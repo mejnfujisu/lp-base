@@ -6,7 +6,7 @@
 
 .s-hidding {
   transition: opacity 1s;
-  opacity: 0.2;
+  opacity: 0;
 }
 
 .h-content {
@@ -16,7 +16,34 @@
 }
 
 .s-content {
-  background: lightsalmon;
+  border-radius: 30px;
+  padding: 30px;
   height: 100%;
-  /* background-color: rgba(255, 255, 255, 0.3); */
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+.cover-background {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  /* padding: 5px; */
+  /* transition: all 0.25s ease, opacity 0.15s ease; */
+}
+
+.friend-name {
+  /* margin-bottom: 10px;
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: 2px solid #FFFFFF;
+  background: rgba(255, 255, 255, 0.7); */
+  padding: 0;
+
+  color: rgba(41, 45, 50, 0.6);
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.01em;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: left;
 }

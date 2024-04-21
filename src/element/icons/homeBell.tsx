@@ -1,36 +1,35 @@
 const homeBellSvg = () => {
    return (
-      <svg width="" height="50" viewBox="0 0 76 91" fill="none" xmlns="http://www.w3.org/2000/svg">
-         <g filter="url(#filter0_d_479_962)">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M37.7612 1C24.4324 1 13.6272 11.8051 13.6272 25.134V35.2147C13.6272 36.4974 12.7952 37.6108 11.658 38.2043C7.10684 40.5797 4 45.3432 4 50.8324C4 57.7122 8.9188 63.6125 15.7341 64.5528C22.5559 65.494 31.1012 66.4439 37.8033 66.4439C44.5055 66.4439 53.0507 65.494 59.8726 64.5528C66.6878 63.6125 71.6066 57.7122 71.6066 50.8324C71.6066 45.3166 68.4696 40.5335 63.8824 38.17C62.7359 37.5792 61.8951 36.4615 61.8951 35.1718V25.134C61.8951 11.8051 51.09 1 37.7612 1Z" fill="white" />
-            <g filter="url(#filter1_d_479_962)">
-               <path d="M48.6621 75.592C46.4802 78.8517 42.7492 81 38.5131 81C34.277 81 30.546 78.8517 28.3641 75.592" stroke="white" stroke-width="5" stroke-linecap="round" />
-            </g>
+      <svg width="37" height="43" viewBox="0 0 37 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <g filter="url(#filter0_d_293_33)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.4955 1C11.8049 1 7.1917 5.61316 7.1917 11.3038C7.1917 11.6338 7.20721 11.9603 7.23756 12.2824C7.4812 14.8685 5.68468 19.4389 4.57579 21.7879C4.2065 22.5702 4 23.4444 4 24.3669C4 27.29 6.08993 29.797 8.98566 30.1965C11.8842 30.5964 15.5149 31 18.3626 31C21.2102 31 24.841 30.5964 27.7395 30.1965C30.6352 29.797 32.7252 27.29 32.7252 24.3669C32.7252 23.4444 32.5187 22.5702 32.1494 21.7879C31.0405 19.4389 29.244 14.8685 29.4876 12.2824C29.518 11.9603 29.5335 11.6338 29.5335 11.3038C29.5335 5.61316 24.9203 1 19.2297 1H17.4955Z" fill="white" />
+         </g>
+         <g filter="url(#filter1_d_293_33)">
+            <path d="M22.9912 33C22.1843 34.2055 20.8045 35 19.2379 35C17.6713 35 16.2915 34.2055 15.4846 33" stroke="white" stroke-width="2" stroke-linecap="round" />
          </g>
          <defs>
-            <filter id="filter0_d_479_962" x="0" y="0" width="75.6064" height="90.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <filter id="filter0_d_293_33" x="0" y="0" width="36.7252" height="38" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                <feFlood flood-opacity="0" result="BackgroundImageFix" />
                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                <feOffset dy="3" />
                <feGaussianBlur stdDeviation="2" />
                <feComposite in2="hardAlpha" operator="out" />
                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
-               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_479_962" />
-               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_479_962" result="shape" />
+               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_293_33" />
+               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_293_33" result="shape" />
             </filter>
-            <filter id="filter1_d_479_962" x="21.8638" y="71.0918" width="33.2988" height="18.4082" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <filter id="filter1_d_293_33" x="10.4845" y="30.9999" width="17.5068" height="12.0001" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                <feFlood flood-opacity="0" result="BackgroundImageFix" />
                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-               <feOffset dy="2" />
+               <feOffset dy="3" />
                <feGaussianBlur stdDeviation="2" />
                <feComposite in2="hardAlpha" operator="out" />
-               <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_479_962" />
-               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_479_962" result="shape" />
+               <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0" />
+               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_293_33" />
+               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_293_33" result="shape" />
             </filter>
          </defs>
       </svg>
-
    )
 }
 
